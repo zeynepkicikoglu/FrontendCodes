@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("start");
+      const serverStatus = false;
+
+      const login = (username, password) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (serverStatus) {
+              resolve({ username: username, email: "zeynepk@gmail.com" });
+            } else {
+              reject("server is offline");
+            }
+          }, 1000);
+        });
+      };
+
+      const getPostsByUsername = (username) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(["post 1", "post 2", "post 3"]);
+          }, 2000);
+        });
+      };
+      const getPostDetails = (post) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("post details");
+          }, 1000);
+        });
+      };
+
+      login("zeyk", "123")
+        .then((user) => {
+          console.log(user);
+          return getPostsByUsername(user.username);
+        })
+        .then((posts) => {
+          console.log(posts);
+          return getPostDetails(posts[0]);
+        })
+        .then((details) => {
+          console.log(details);
+          //işlem devam etmiyo diye return yapmadık
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      // login(
+      //   "zeynepk",
+      //   "5",
+      //   (username) => {
+      //     console.log(username);
+      //     getPostsByUsername(username, (posts) => {
+      //       console.log(posts);
+      //       getPostDetails(posts[0], (details) => {
+      //         console.log(details);
+      //       });
+      //     });
+      //   },
+      //   (error) => {
+      //     console.log(error);
+      //   }
+      // );
+      //   function error(msg) {
+      //     console.log(msg);
+      //   }
+
+      console.log("end");
+      //const serverStatus = true;
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (serverStatus) {
+            resolve({ username: "zeykicikoglu" });
+          } else {
+            reject("login error");
+          }
+        }, 2000);
+      });
+      promise
+        .then((user) => {
+          console.log(user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>

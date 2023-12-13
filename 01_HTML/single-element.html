@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card-header"><h3 id="title">ToDo App</h3></div>
+    <ul id="task-list">
+      <li class="task">Görev1</li>
+      <li class="task">Görev2</li>
+      <li class="task">Görev3</li>
+    </ul>
+    <ul id="task-list2">
+      <li class="task">Görev1</li>
+      <li class="task">Görev2</li>
+      <li class="task">Görev3</li>
+    </ul>
+    <script>
+      let sonuc;
+      ul = document.getElementById("task-list");
+      cocuk = ul.children[0];
+      cocuk = ul.firstElementChild;
+
+      deneme = document.getElementById("title").parentElement; //elementin bi üstündeki kapsayıcı elementini çağırır
+
+      deneme = document.querySelector(".task").nextElementSibling; //aynı kapsayıcıdaki bi sonraki elemana gider.
+
+      task2 = ul.getElementsByTagName("li");
+      for (let t of task2) {
+        t.style.color = "purple";
+        t.style.fontSize = "20px";
+        t.innerText = "Z";
+      }
+
+      sonuc = document.getElementById("title");
+
+      sonuc = document.getElementById("title").id;
+
+      sonuc = document.getElementById("title").className;
+      sonuc = document.getElementById("title").classList;
+
+      document.getElementById("title").style.fontSize = "30px";
+      document.getElementById("title").style.color = "blue";
+      //document.getElementById("title").style.display = "none";
+      document.getElementById("title").innerText = "<p>Todo Appp</p>";
+      //document.getElementById("title").innerHTML = "<p>Todo Appp</p>";
+
+      sonuc = document.querySelector("#title");
+      sonuc = document.querySelector(".card-header");
+      sonuc = document.querySelector("div");
+
+      sonuc = document.querySelector("li"); //ilk gördüğü li etiketini getirir.
+      sonuc = document.querySelector("li:first-child");
+      sonuc = document.querySelector("li:last-child");
+      sonuc = document.querySelector("li:nth-child(2)");
+      let sonuc2;
+      sonuc2 = document.getElementsByClassName("task")[0];
+      task = document.getElementsByClassName("task");
+
+      for (let i = 0; i < task.length; i++) {
+        console.log(task[i]);
+      }
+      for (let t of task) {
+        //of liste içerisindeki elemente karsılık gelir
+        console.log(task);
+      }
+      for (let t in task) {
+        //in operatörü index numaralarına ulaşır
+        console.log(task);
+      }
+      for (let t of task) {
+        t.style.color = "purple";
+        t.style.fontSize = "20px";
+        t.innerText = "ZK";
+      }
+    </script>
+  </body>
+</html>

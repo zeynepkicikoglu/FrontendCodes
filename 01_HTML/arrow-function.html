@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   var selamlamaES5 = function () {
+      //     console.log("Merhaba");
+      //   };
+      //   selamlamaES5();
+
+      /*arrow functionları const ile tanımlamak daha iyidir*/
+      //selamlama
+      const selamlamaES6 = (isim) => {
+        console.log("Merhaba" + " " + isim);
+      };
+      selamlamaES6("zeynep");
+
+      //toplama
+      const toplama_ES6 = (a, b) => {
+        return a + b;
+      };
+
+      const kumulatif_toplam = (param = []) => {
+        var toplam = 0;
+        param.forEach((element, index) => {
+          toplam += element;
+        });
+        return toplam;
+      };
+
+      console.log(kumulatif_toplam([1, 2, 2, 3, 4, 42]));
+      sonuc = toplama_ES6(10, 20);
+      console.log(sonuc);
+    </script>
+    <div>kjjk</div>
+  </body>
+</html>

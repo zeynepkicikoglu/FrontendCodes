@@ -1,0 +1,21 @@
+img {
+  border-radius: 50%;
+  margin: 30px;
+  width: 100px;
+}
+
+.custom-table {
+  height: 1px;
+}
+
+.custom-table-cell {
+  width: 450px;
+}
+
+.custom-header {
+  text-align: center;
+}
+
+.custom-subheader {
+  text-align: center;
+}
